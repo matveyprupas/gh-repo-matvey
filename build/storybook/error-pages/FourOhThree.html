@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="stylesheet" href="./assets/styles/error-pages.css">
+  <title>H3 Consumer Web - 403</title>
+</head>
+
+<body>
+  <div class="four-oh-four">
+    <div class='error-page'>
+      <div class='error-page-wraper'>
+        <div class='text'>
+          <div class='image'>
+            <img alt="" aria-hidden="true" src="./assets/illustrations/ErrorPage.svg" data-testid='image' />
+          </div>
+          <div data-lang='en'>
+            <h1 class='heading'>
+              403: Sorry, this page is restricted
+            </h1>
+            <p class='text'>You don’t have permission to access this page. Don’t worry, this happens some times. You
+              can
+              always go back to your Home page and try your search again.</p>
+            <div class='buttons'>
+              <a href="/" class="button btnStyle primary">Go Home</a>
+            </div>
+          </div>
+
+          <div data-lang='es'>
+            <h1 class='heading'>
+              403: Lo sentimos, esta página está restringida
+            </h1>
+            <p class='text'>No tienes permiso para acceder a esta página. No te preocupes, esto pasa a veces. Siempre
+              puedes volver a la página de Inicio e intentar tu búsqueda nuevamente.</p>
+            <div class='buttons'>
+              <a href="/" class="button btnStyle primary">Ir al inicio</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let language = localStorage.getItem('i18nextLng');
+    let fontSize = localStorage.getItem('h3ConsumerFontSize');
+    if (language) {
+      const splitLanguage = language.split('-');
+      language = splitLanguage[0] === 'es' ? 'es' : 'en'
+    } else {
+      language = 'en';
+    }
+    if (!fontSize) { fontSize = 'A'; }
+    document.documentElement.lang = language.toLocaleLowerCase();
+    document.documentElement.dataset.fontsize = fontSize;
+  </script>
+</body>
+
+
+</html>

@@ -1,0 +1,1 @@
+export default "<svg width=\"32\" height=\"6\" viewBox=\"0 0 32 6\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect width=\"32\" height=\"6\" rx=\"3\" fill=\"var(--icon-stroke, #284B9B)\"/>\n</svg>\n";

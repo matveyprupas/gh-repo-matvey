@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="stylesheet" href="./assets/styles/error-pages.css">
+  <title>H3 Consumer Web - 500</title>
+</head>
+
+<body>
+  <div class="four-oh-four">
+    <div class='error-page'>
+      <div class='error-page-wraper'>
+        <div class='text'>
+          <div class='image'>
+            <img alt="" aria-hidden="true" src="./assets/illustrations/Error500.svg" data-testid='image' />
+          </div>
+          <div data-lang='en'>
+            <h1 class='heading'>
+              500: Unexpected server error
+            </h1>
+            <p class='text'>Something went wrong and this page is currently unavailable. Don't worry, we are working
+              hard
+              to fix it. Try refreshing your browser or check back in a few moments.</p>
+            <div class='buttons'>
+              <button type="button" onclick="location.reload()" class="button btnStyle tertiary">Try Again</button>
+              <a href="/" class="button btnStyle primary">Go Home</a>
+            </div>
+          </div>
+          <div data-lang='es'>
+            <h1 class='heading'>
+              500: Error de servidor inesperado
+            </h1>
+            <p class='text'>Algo salió mal y esta página no está disponible en este momento. No te preocupes, estamos
+              trabajando duro para solucionarlo. Intenta refrescar tu navegador o regresa en unos momentos.</p>
+            <div class='buttons'>
+              <a href="/" class="button btnStyle primary">Ir al inicio</a>
+              <button type="button" onclick="location.reload()" class="button btnStyle tertiary">Inténtalo otra
+                vez</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let language = localStorage.getItem('i18nextLng');
+    let fontSize = localStorage.getItem('h3ConsumerFontSize');
+    if (language) {
+      const splitLanguage = language.split('-');
+      language = splitLanguage[0] === 'es' ? 'es' : 'en'
+    } else {
+      language = 'en';
+    }
+    if (!fontSize) { fontSize = 'A'; }
+    document.documentElement.lang = language.toLocaleLowerCase();
+    document.documentElement.dataset.fontsize = fontSize;
+  </script>
+</body>
+
+
+</html>
